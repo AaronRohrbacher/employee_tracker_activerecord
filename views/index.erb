@@ -1,0 +1,18 @@
+<h1>Employees List</h1>
+<ol>
+
+  <p>Here are all your employees:</p>
+
+  <ul>
+    <% @employees.each do |employee| %>
+      <li> <a href="/employee_edit/<%= employee.id %>"> <%= employee.name %></a></li>
+    <% end %>
+  </ul>
+<h2>Add a employee!</h2>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="name">Employee Description: </label>
+    <input id="employee_name" name="name" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn btn-warning">Add Employee</button>
+</form>
